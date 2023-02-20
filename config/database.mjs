@@ -1,5 +1,7 @@
+//@DESC config database
 import mongoose from "mongoose";
 mongoose.set('strictQuery', false);
+
 const dbConnection = () => {
     mongoose.connect(process.env.DB_URI).then((connect) => {
         console.log(`Database connected: ${connect.connection.host}`); //to know the host if connected succed
