@@ -12,6 +12,7 @@ const pTask_schema = new mongoose.Schema(
       type: String,
     //   type: required,
     },
+    
     description: {
       type: String,
     },
@@ -40,6 +41,7 @@ const pTask_schema = new mongoose.Schema(
     style: {
       type: Number,
     },
+    
   },
   { timestamps: true }
 );
