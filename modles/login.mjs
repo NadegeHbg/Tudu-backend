@@ -23,9 +23,6 @@ const login_schema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-// login_schema.methods.hashPassword = (password) => {
-//     return bcrypt.hashSync(password,hash)
-// }
 
 const User = mongoose.model("Register", login_schema);
 export default User;
