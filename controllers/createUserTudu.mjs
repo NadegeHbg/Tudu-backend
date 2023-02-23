@@ -30,7 +30,7 @@ const create_user = asyncHandler(async (req, res) => {
   const saved_user = await user.save();
 
   
-  res.status(201).json({data: saved_user });
+  
 
   res.status(500).json(err);
 });

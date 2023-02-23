@@ -1,6 +1,6 @@
 //@DESC  CREATE SCHEMA AND MODEL FOR login
 import mongoose from "mongoose";
-import bcrypt, { hash } from "bcrypt";
+
 // 1. create Schema
 const login_schema = new mongoose.Schema(
   {
@@ -27,5 +27,5 @@ const login_schema = new mongoose.Schema(
 //     return bcrypt.hashSync(password,hash)
 // }
 
-const User = mongoose.model("User", login_schema);
+const User = mongoose.model("Register", login_schema);
 export default User;

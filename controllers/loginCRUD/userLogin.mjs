@@ -3,7 +3,7 @@ const userLogin =(req,res,next)=>{
     passport.authenticate('local',{
         successRedirect : '/dashboard',
         failureRedirect : '/users/login',
-        failureFlash : true,
+        // failureFlash : true,
         })(req,res,next);
 }
 export default userLogin;
