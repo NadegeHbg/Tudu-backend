@@ -4,7 +4,7 @@ import morgan from "morgan";
 import dbConnection from "./config/database.mjs";
 import dotenv from "dotenv";
 import router from "./routes/tuduRoute.mjs";
-
+import session from "express-session";
 
 import bodyParser from "body-parser";
 // import session from "express-session";
@@ -39,7 +39,11 @@ app.get("/", (req, res) => {
 app.use(bodyParser.json());
 app.use(express.urlencoded({extended : true}))
 
-
+app.use(session({
+  secret: 'your-secret-key',
+  resave: false,
+  saveUninitialized: false
+}));
 
 
 app.post("/login", (req, res, next) => {
