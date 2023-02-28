@@ -1,16 +1,23 @@
 import mongoose from "mongoose";
-import { v4 as uuidv4 } from "uuid";
+import { uuid } from 'uuidv4'
+const pTask_schema = new mongoose.Schema({
 
-const pTask_schema = new mongoose.Schema(
-  {
     // id: {
     //   type: String,
-    //   default: uuidv4,
+    //   default: uuid,
     //   unique: true,
     // },
-    pTaskName: {
+    creator:{
+    
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'user_model'
+      },
+      
+      
+    
+    pTaskName : {
       type: String,
-    //   type: required,
+      // type: required,
     },
     
     description: {
@@ -22,10 +29,10 @@ const pTask_schema = new mongoose.Schema(
       required: true,
     },
 
-    // dueDate: {
-    //   type: Date,
+    dueDate: {
+      type: Date,
       
-    // },
+    },
       entryDate: {
       type: Date,
     },
@@ -41,6 +48,11 @@ const pTask_schema = new mongoose.Schema(
     style: {
       type: Number,
     },
+    isDone: {
+      type: Boolean,
+      default:false,
+    },
+    
     
   },
   { timestamps: true }

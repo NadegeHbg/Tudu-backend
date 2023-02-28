@@ -1,6 +1,8 @@
+// @Desc Delete tudu by user name 
+// @Route  delete: api/tudu/delete/userName/:userName 
 import asyncHandler from "express-async-handler";
 import user_model from "../modles/userModel.mjs";
-//@ desc delete user by user name
+
 
 const deleteByUser = asyncHandler(async(req,res,next) =>{
     const deleteUser = await user_model.findOneAndDelete(
