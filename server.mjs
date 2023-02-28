@@ -20,6 +20,10 @@ dbConnection();
 
 // app express
 const app = express();
+// BodyParser
+// Use body-parser to parse JSON data sent via HTTP POST
+app.use(bodyParser.json());
+app.use(express.urlencoded({extended : true}))
 
 // morgan midlleweare
 app.use(express.json()); // to make parcing for json
@@ -34,10 +38,7 @@ app.get("/", (req, res) => {
   res.send("Welcome in TuDu", router);
 });
 
-// BodyParser
-// Use body-parser to parse JSON data sent via HTTP POST
-app.use(bodyParser.json());
-app.use(express.urlencoded({extended : true}))
+
 
 app.use(session({
   secret: 'your-secret-key',

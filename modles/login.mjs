@@ -15,6 +15,19 @@ const login_schema = new mongoose.Schema(
       required: true,
       minlength: [6, "Too Short Password"],
     },
+    username: {
+      type: String,
+      // required: true
+    },
+    firstname: {
+      type: String,
+      // required: true
+    },
+
+    secondname: {
+      type: String,
+      // required: true
+    },
     // active:{
     //     type: Boolean,
     //     default: true
