@@ -1,3 +1,5 @@
+// @Desc Update tudu by userName 
+// @Route  put: api/tudu/edit/userName/:userName     
 import asyncHandler from "express-async-handler";
 import user_model from "../modles/userModel.mjs";
 
