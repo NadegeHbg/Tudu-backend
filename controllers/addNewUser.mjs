@@ -1,7 +1,7 @@
 //  @Desc     Create Category
 //  @Route    POST /api/tudu/user
 import asyncHandler from "express-async-handler";
-import user_model from "../modles/userModel.mjs";
+import user_model from "../models/userModel.mjs";
 
 
 const create_user = asyncHandler(async (req, res) => {
@@ -9,7 +9,7 @@ const create_user = asyncHandler(async (req, res) => {
   const {userName,firstName, secondName, style, rewards, coins} = req.body
   
   const user = new user_model({  
-    // id : id,
+   
     userName: userName,
 
     firstName: firstName,
@@ -30,7 +30,6 @@ const create_user = asyncHandler(async (req, res) => {
   const saved_user = await user.save();
 
   res.status(201).json(saved_user);
-  
 
   res.status(500).json(err);
 });

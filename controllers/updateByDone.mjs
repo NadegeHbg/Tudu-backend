@@ -1,7 +1,7 @@
 import asyncHandler from "express-async-handler";
-import pTask_model from "../modles/pTasksModel.mjs";
+import pTask_model from "../models/pTasksModel.mjs";
 
-const filterByDone = asyncHandler(async (req, res) => {
+const updateByDone = asyncHandler(async (req, res) => {
   const id = req.params.id;
   console.log(id);
 
@@ -18,4 +18,4 @@ const filterByDone = asyncHandler(async (req, res) => {
   res.status(500).json({ message: "Internal server error" });
 });
 
-export default filterByDone;
+export default updateByDone;

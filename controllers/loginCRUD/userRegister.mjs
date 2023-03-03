@@ -1,5 +1,5 @@
 import asyncHandler from "express-async-handler";
-import User from "../../modles/login.mjs";
+import User from "../../models/login.mjs";
 import bcrypt from "bcrypt";
 import passport from "passport";
 import passportConfig from "../../config/passport.mjs";
@@ -13,19 +13,7 @@ const userRegister = asyncHandler(async (req, res,next) => {
 
   let errors = [];
 
-  if (!email || !password || !conformation || !username ) {
-    errors.push({ msg: "Please fill in all fields" });
-  }
 
-   //check if match
-if(password !== conformation) {
-  errors.push({msg : "passwords dont match"});
-}
-
-  // if (password.length < 6) {
-  //   errors.push({ msg: "Password must be at least 6 characters" });
-  // }
- 
 
   if (errors.length > 0) {
     res.send("register", {
@@ -59,6 +47,7 @@ if(password !== conformation) {
       }
     } catch (error) {
       console.error(error);
+      console.log(req);
     }
 
     return res.send("user registered");

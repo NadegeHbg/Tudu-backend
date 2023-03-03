@@ -1,12 +1,13 @@
 // @Desc show personal Tasks  
-// @Route  put: api/tudu/ptask     
+// @Route  get: api/tudu/ptask     
 
 import asyncHandler from "express-async-handler";
-import user_model from "../modles/pTasksModel.mjs";
+import user_model from "../models/pTasksModel.mjs";
 //  @Desc     Get List Of Categories
 //  @Route    GET /api/tudu/
 const getPTask = asyncHandler(async (req, res,next) => {
-  const data = await user_model.find({});
+  const id = req.params.id
+  const data = await user_model.findById(id);
   res.status(200).json({ results: data.length, data : data });
 });
 
