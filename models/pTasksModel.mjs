@@ -2,11 +2,7 @@ import mongoose from "mongoose";
 import { uuid } from 'uuidv4'
 const pTask_schema = new mongoose.Schema({
 
-    // id: {
-    //   type: String,
-    //   default: uuid,
-    //   unique: true,
-    // },
+    
     creator:{
     
         type: mongoose.Schema.Types.ObjectId,

@@ -1,7 +1,7 @@
-//  @Desc     Create Category
+//  @Desc     add tudu
 //  @Route    POST /api/tudu/task
 import asyncHandler from "express-async-handler";
-import pTask_model from "../modles/pTasksModel.mjs";
+import pTask_model from "../models/pTasksModel.mjs";
 // import { uuid } from "uuidv4";
 
 const create_pTask = asyncHandler(async (req, res, next) => {

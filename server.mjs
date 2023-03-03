@@ -43,7 +43,7 @@ app.get("/", (req, res) => {
 app.use(session({
   secret: 'your-secret-key',
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: true
 }));
 
 
@@ -61,10 +61,10 @@ app.get("/dashboard", ensureAuthenticated, (req, res) => {
 });
 
 //logout
-app.get("/logout", (req, res) => {
+app.post("/logout", (req, res) => {
   req.logout();
 
-  res.redirect("/users/login");
+  res.send("/user/login");
 });
 
 

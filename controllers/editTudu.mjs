@@ -1,7 +1,7 @@
 // @Desc Update tudu by id 
-// @Route  put: api/tudu/edit/id/:id     
+// @Route  put: api/tudu/user/editTudu/:id 
 
-import user_model from "../modles/userModel.mjs";
+import user_model from "../models/userModel.mjs";
 import asyncHandler from "express-async-handler";
 
 const editById = asyncHandler(async(req,res,next) => {

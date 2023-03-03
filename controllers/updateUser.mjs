@@ -1,7 +1,7 @@
 // @Desc Update tudu by userName 
 // @Route  put: api/tudu/edit/userName/:userName     
 import asyncHandler from "express-async-handler";
-import user_model from "../modles/userModel.mjs";
+import user_model from "../models/userModel.mjs";
 
 const updateByUsr = asyncHandler(async(req,res) => {
     const updateUser =  await user_model.findOneAndUpdate(
